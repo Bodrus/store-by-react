@@ -10,13 +10,13 @@ import BooksServices from '../../services/bookstore-service';
 import './information-blok.css';
 
 export default class InformationBlok extends Component {
-  booksServices = new BooksServices()
+  booksServices = new BooksServices();
 
   state = {
     books: [],
     loading: true,
-    error: false,
-  }
+    error: false
+  };
 
   componentDidMount() {
     this.updateInformation();
@@ -25,24 +25,24 @@ export default class InformationBlok extends Component {
   onError = () => {
     this.setState({
       error: true,
-      loading: false,
+      loading: false
     });
-  }
+  };
 
   pressDelleteButton = () => {
     this.setState({ books: [] });
-  }
+  };
 
   booksLoaded = books => {
     this.setState({ books, loading: false });
-  }
+  };
 
   updateInformation = () => {
     this.booksServices
       .getBooks()
       .then(books => this.booksLoaded(books))
       .catch(this.onError);
-  }
+  };
 
   render() {
     const { books, loading, error } = this.state;
@@ -50,7 +50,7 @@ export default class InformationBlok extends Component {
     const {
       totalNumber,
       sumOfPrices,
-      averagePrice,
+      averagePrice
     } = this.booksServices.getData(books);
 
     const hasData = !(loading || error);
@@ -82,7 +82,7 @@ const InformationView = ({
   totalNumber,
   averagePrice,
   sumOfPrices,
-  pressDelleteButton,
+  pressDelleteButton
 }) => {
   return (
     <div>

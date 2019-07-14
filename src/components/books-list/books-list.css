@@ -1,0 +1,11 @@
+.books-list .list-group-item {
+  cursor: pointer;
+}
+
+.books-list .list-group-item:hover {
+  background-color: #444;
+}
+
+.books-list {
+  padding-bottom: 15px;
+}

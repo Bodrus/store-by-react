@@ -1,0 +1,20 @@
+.book-details {
+  display: flex;
+  /* margin-top: 1rem; */
+  flex-direction: row;
+  padding: 1rem;
+}
+
+.book-details .book-image {
+  width: 30%;
+  height: 30%;
+  border-radius: 10px;
+}
+
+.book-details .list-group-item {
+  padding: 0.25rem;
+}
+
+.book-details .list-group-item .term {
+  margin-right: 0.5rem;
+}

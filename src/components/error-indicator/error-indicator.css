@@ -8,9 +8,9 @@
 
 .error-indicator img {
   margin-bottom: 15px;
-  width: 120px;
+  width: 100px;
 }
 
 .error-indicator .ops {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
