@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Header from '../header';
+import InformationBlok from '../infotmation-blok';
 
 import ErrorIndicator from '../error-indicator';
 
@@ -20,6 +21,11 @@ export default class App extends React.Component {
       return <ErrorIndicator />;
     }
 
-    return <Header />;
+    return (
+      <div>
+        <Header />
+        <InformationBlok />
+      </div>
+    );
   }
 }

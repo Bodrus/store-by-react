@@ -1,0 +1,23 @@
+.information-blok {
+  display: flex;
+  padding: 1rem;
+}
+
+.information-blok .book-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.information-blok .list-group {
+  margin: 1rem 0 0 1rem;
+}
+
+.information-blok .list-group-item {
+  padding: .25rem;
+}
+
+.information-blok .list-group-item .term {
+  margin-right: .5rem;
+}
