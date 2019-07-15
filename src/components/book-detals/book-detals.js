@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Spiner from '../spiner';
-import DelleteButton from '../delete-button';
+import React, { Component } from "react";
+import Spiner from "../spiner";
+import DelleteButton from "../delete-button";
 
-import './book-detals.css';
+import "./book-detals.css";
 
 export default class BookDetails extends Component {
   componentDidMount() {
@@ -39,9 +39,10 @@ export default class BookDetails extends Component {
 
   render() {
     const { book, loading } = this.state;
+    const span = <span>Select a book from a list</span>;
 
     if (!book) {
-      return <span>Select a book from a list</span>;
+      return span;
     }
 
     const { coverImage, title, author, price } = book;
@@ -68,7 +69,7 @@ export default class BookDetails extends Component {
     );
 
     const noData = loading ? <Spiner /> : null;
-    const renderData = !loading ? data : null;
+    const renderData = this.props.booksList.length !== 0 ? data : null;
 
     return (
       <>

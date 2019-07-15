@@ -6,84 +6,47 @@ import ErrorIndicator from '../error-indicator';
 import icon from './book.png';
 import DeleteButton from '../delete-button';
 import BooksServices from '../../services/bookstore-service';
+import { BookstoreServiceConsumer } from '../bookstore-service-context';
 
 import './information-blok.css';
 
-export default class InformationBlok extends Component {
-  booksServices = new BooksServices();
+const InformationBlok = () => {
+  const content = (
+    <BookstoreServiceConsumer>
+      {({ books, booksServices, pressDelleteButton, loading }) => {
+        return (
+          <InformationView
+            books={books}
+            booksServices={booksServices}
+            pressDelleteButton={pressDelleteButton}
+            loading={loading}
+          />
+        );
+      }}
+    </BookstoreServiceConsumer>
+  );
 
-  state = {
-    books: [],
-    loading: true,
-    error: false
-  };
-
-  componentDidMount() {
-    this.updateInformation();
-  }
-
-  onError = () => {
-    this.setState({
-      error: true,
-      loading: false
-    });
-  };
-
-  pressDelleteButton = () => {
-    this.setState({ books: [] });
-  };
-
-  booksLoaded = books => {
-    this.setState({ books, loading: false });
-  };
-
-  updateInformation = () => {
-    this.booksServices
-      .getBooks()
-      .then(books => this.booksLoaded(books))
-      .catch(this.onError);
-  };
-
-  render() {
-    const { books, loading, error } = this.state;
-
-    const {
-      totalNumber,
-      sumOfPrices,
-      averagePrice
-    } = this.booksServices.getData(books);
-
-    const hasData = !(loading || error);
-    const spiner = loading ? <Spiner /> : null;
-
-    const content = hasData ? (
-      <InformationView
-        totalNumber={totalNumber}
-        sumOfPrices={sumOfPrices}
-        averagePrice={averagePrice}
-        pressDelleteButton={this.pressDelleteButton}
-      />
-    ) : null;
-
-    const errorIndicator = error ? <ErrorIndicator /> : null;
-
-    return (
-      <div className="information-blok jumbotron rounded">
-        <img className="book-image" src={icon} alt="" />
-        {spiner}
-        {content}
-        {errorIndicator}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="information-blok jumbotron rounded">
+      <img className="book-image" src={icon} alt="" />
+      {content}
+    </div>
+  );
+};
 
 const InformationView = ({
-  totalNumber,
-  averagePrice,
-  sumOfPrices,
-  pressDelleteButton
+  books,
+  booksServices,
+  pressDelleteButton,
+  loading
 }) => {
+  const { totalNumber, sumOfPrices, averagePrice } = booksServices.getData(
+    books
+  );
+
+  if (loading) {
+    return <Spiner />;
+  }
   return (
     <div>
       <h4>Catalog Information</h4>
@@ -105,3 +68,5 @@ const InformationView = ({
     </div>
   );
 };
+
+export default InformationBlok;
