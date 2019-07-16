@@ -52,15 +52,15 @@ const InformationView = ({
       <h4>Catalog Information</h4>
       <ul className="list-group list-group-flush">
         <li className="list-group-item">
-          <span className="term">Общее количество книг</span>
+          <span className="term">Total number of goods</span>
           <span>{totalNumber}</span>
         </li>
         <li className="list-group-item">
-          <span className="term">Сумма цен всех товаров</span>
+          <span className="term">The sum of the prices of all goods</span>
           <span>{sumOfPrices}</span>
         </li>
         <li className="list-group-item">
-          <span className="term">Средняя цена</span>
+          <span className="term">Average price</span>
           <span>{averagePrice}</span>
         </li>
       </ul>
