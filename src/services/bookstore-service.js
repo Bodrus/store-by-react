@@ -1,24 +1,9 @@
 import { uniqueId } from 'lodash';
 
 export default class BookstoreService {
-  data = [
-    {
-      id: '1',
-      title: 'Production-Ready Microservices',
-      author: 'Susan J. Fowler',
-      price: 32,
-      coverImage:
-        'https://images-na.ssl-images-amazon.com/images/I/41yJ75gpV-L._SX381_BO1,204,203,200_.jpg'
-    },
-    {
-      id: '2',
-      title: 'Release It!',
-      author: 'Michael T. Nygard',
-      price: 45,
-      coverImage:
-        'https://images-na.ssl-images-amazon.com/images/I/414CRjLjwgL._SX403_BO1,204,203,200_.jpg'
-    }
-  ];
+  constructor(data) {
+    this.data = data;
+  }
 
   getAveragePrices = goods => {
     const allPrice = goods.reduce((acc, { price }) => acc + Number(price), 0);
@@ -33,7 +18,7 @@ export default class BookstoreService {
     return goods.length;
   };
 
-  getData = goods => {
+  getData(goods) {
     if (!goods || goods.length === 0) {
       const totalNumber = 0;
       const sumOfPrices = 0;
@@ -44,12 +29,17 @@ export default class BookstoreService {
     const sumOfPrices = this.getSumOfPrices(goods);
     const averagePrice = this.getAveragePrices(goods);
     return { totalNumber, sumOfPrices, averagePrice };
-  };
+  }
 
-  setData = item => {
-    const newItem = { ...item, id: uniqueId() + 10 };
-    this.data.push(newItem);
-  };
+  setData(item) {
+    const x = { id: uniqueId() + 10, ...item };
+    this.data.push(x);
+  }
+
+  dellItem(idDell) {
+    const filtredData = this.data.filter(el => el.id !== idDell);
+    this.data = filtredData;
+  }
 
   getBooks() {
     return new Promise((resolve, reject) => {

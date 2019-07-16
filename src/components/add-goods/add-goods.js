@@ -1,16 +1,14 @@
 import React from 'react';
-import BooksServices from '../../services/bookstore-service';
+import { uniqueId } from 'lodash';
 
 export default class AddGoods extends React.Component {
-  booksServices = new BooksServices();
-
   state = {
     form: {
       title: '',
       author: '',
-      price: ''
-    },
-    img: ''
+      price: 0,
+      coverImage: ''
+    }
   };
 
   handleChangeField = ({ target }) => {
@@ -23,54 +21,36 @@ export default class AddGoods extends React.Component {
   };
 
   handleChangeImg = ({ target }) => {
+    const { form } = this.state;
     const reader = new FileReader();
     reader.onload = () => {
-      this.setState({ img: reader.result });
+      this.setState({ form: { ...form, coverImage: reader.result } });
     };
     reader.readAsDataURL(target.files[0]);
   };
 
-  handleSubmitForm = () => {
+  handleSubmitForm = e => {
+    e.preventDefault();
     const { pressOnSubmit } = this.props;
     const data = this.groupData();
-    pressOnSubmit();
-
-    this.booksServices.setData(data);
+    pressOnSubmit(data);
 
     this.setState({
       form: {
         title: '',
         author: '',
-        price: 0
-      },
-      img: ''
+        price: 0,
+        coverImage: ''
+      }
     });
   };
 
   groupData = () => {
-    const { form, img } = this.state;
+    const { form } = this.state;
     const keys = Object.keys(form);
-    return keys.reduce((acc, key) => ({ ...acc, [key]: form[key] }), {
-      coverImage: img
-    });
+    const x = keys.reduce((acc, key) => ({ ...acc, [key]: form[key] }), {});
+    return x;
   };
-
-  renderResult() {
-    const { form, img } = this.state;
-    const keys = Object.keys(form);
-
-    return (
-      <div>
-        <button type="button" onClick={this.handleBackToForm}>
-          Back
-        </button>
-        <table key="fieldsValues" className="table">
-          <tbody>{keys.map(this.renderRow)}</tbody>
-        </table>
-        <img className="book-image" src={img} />
-      </div>
-    );
-  }
 
   renderForm() {
     const { form } = this.state;

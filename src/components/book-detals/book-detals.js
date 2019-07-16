@@ -1,8 +1,10 @@
-import React, { Component } from "react";
-import Spiner from "../spiner";
-import DelleteButton from "../delete-button";
+/* eslint-disable no-unused-vars */
+import React, { Component } from 'react';
+import Spiner from '../spiner';
+import DelleteButton from '../delete-button';
+import icon from './notImage.png';
 
-import "./book-detals.css";
+import './book-detals.css';
 
 export default class BookDetails extends Component {
   componentDidMount() {
@@ -39,6 +41,7 @@ export default class BookDetails extends Component {
 
   render() {
     const { book, loading } = this.state;
+    const { pressDellBookButton, bookId } = this.props;
     const span = <span>Select a book from a list</span>;
 
     if (!book) {
@@ -47,9 +50,11 @@ export default class BookDetails extends Component {
 
     const { coverImage, title, author, price } = book;
 
+    const img = !coverImage ? icon : coverImage;
+
     const data = (
       <div className="book-details card">
-        <img className="book-image" src={coverImage} />
+        <img className="book-image" src={img} />
 
         <div className="card-body">
           <h4>{title}</h4>
@@ -63,7 +68,13 @@ export default class BookDetails extends Component {
               <span>{price}</span>
             </li>
           </ul>
-          <DelleteButton />
+          <button
+            type="submit"
+            className="btn btn-danger"
+            onClick={() => pressDellBookButton(bookId)}
+          >
+            Dell book
+          </button>
         </div>
       </div>
     );

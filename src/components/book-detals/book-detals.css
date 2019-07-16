@@ -18,3 +18,7 @@
 .book-details .list-group-item .term {
   margin-right: 0.5rem;
 }
+
+.btn-danger {
+  margin-top: 15px;
+}
