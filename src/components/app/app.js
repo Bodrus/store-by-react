@@ -9,6 +9,7 @@ import { BookstoreServiceProvider } from '../bookstore-service-context';
 import getJsonData from '../../services/data-json';
 import AddGoods from '../add-goods';
 import BookDetals from '../book-detals';
+import AdminPage from '../admin-page';
 
 import ErrorIndicator from '../error-indicator';
 
@@ -76,10 +77,11 @@ export default class App extends React.Component {
 
     const data = {
       books: this.state.books,
-      booksServices: new BooksServices(),
+      booksServices: this.booksServices,
       pressDelleteButton: this.pressDelleteButton,
       loading: this.state.loading,
-      pressDellBookButton: this.pressDellBookButton
+      pressDellBookButton: this.pressDellBookButton,
+      pressOnSubmit: this.pressOnSubmit
     };
 
     return (
@@ -88,18 +90,13 @@ export default class App extends React.Component {
           <div className="store-app">
             <Header />
             <InformationBlok />
-            <CatalogPage />
-            <AddGoods
-              pressOnSubmit={this.pressOnSubmit}
-              booksServices={this.booksServices}
-            />
-            {/* <Route
+            <Route
               path="/"
               render={() => <h2>Welcome to Book Shope</h2>}
               exact
             />
-            <Route path="/add" component={AddGoods} />
-            <Route path="/catalog" exact component={CatalogPage} /> */}
+            <Route path="/admin/" component={AdminPage} />
+            <Route path="/catalog/" exact component={CatalogPage} />
           </div>
         </Router>
       </BookstoreServiceProvider>

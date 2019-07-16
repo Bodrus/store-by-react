@@ -54,7 +54,7 @@ export default class BookDetails extends Component {
 
     const data = (
       <div className="book-details card">
-        <img className="book-image" src={img} />
+        <img className="book-image" src={img} alt="books" />
 
         <div className="card-body">
           <h4>{title}</h4>

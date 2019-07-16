@@ -1,5 +1,4 @@
 import React from 'react';
-import { uniqueId } from 'lodash';
 
 export default class AddGoods extends React.Component {
   state = {
@@ -101,7 +100,7 @@ export default class AddGoods extends React.Component {
             />
           </div>
           <div className="form-group col-md-6">
-            <label htmlFor="coverImage">Example file input</label>
+            <label htmlFor="coverImage">Load image</label>
             <input
               type="file"
               name="coverImage"
