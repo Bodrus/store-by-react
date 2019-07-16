@@ -35,13 +35,12 @@ export default class BookDetails extends Component {
       return;
     }
     const book = this.getBook(bookId, booksList);
-
     this.setState({ book, loading: false });
   };
 
   render() {
     const { book, loading } = this.state;
-    const { pressDellBookButton, bookId } = this.props;
+    const { pressDellBookButton, bookId, isLoggedIn } = this.props;
     const span = <span>Select a book from a list</span>;
 
     if (!book) {
@@ -51,6 +50,17 @@ export default class BookDetails extends Component {
     const { coverImage, title, author, price } = book;
 
     const img = !coverImage ? icon : coverImage;
+
+    const button = (
+      <button
+        type="submit"
+        className="btn btn-danger"
+        onClick={() => pressDellBookButton(bookId)}
+      >
+        Dell book
+      </button>
+    );
+    const buttonDellete = isLoggedIn ? button : null;
 
     const data = (
       <div className="book-details card">
@@ -68,13 +78,7 @@ export default class BookDetails extends Component {
               <span>{price}</span>
             </li>
           </ul>
-          <button
-            type="submit"
-            className="btn btn-danger"
-            onClick={() => pressDellBookButton(bookId)}
-          >
-            Dell book
-          </button>
+          {buttonDellete}
         </div>
       </div>
     );

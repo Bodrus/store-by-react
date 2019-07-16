@@ -1,8 +1,7 @@
 .book-details {
   display: flex;
-  /* margin-top: 1rem; */
   flex-direction: row;
-  padding: 1rem;
+  padding: 10px;
 }
 
 .book-details .book-image {
@@ -12,11 +11,11 @@
 }
 
 .book-details .list-group-item {
-  padding: 0.25rem;
+  padding: 5px;
 }
 
 .book-details .list-group-item .term {
-  margin-right: 0.5rem;
+  margin-right: 15px;
 }
 
 .btn-danger {

@@ -1,10 +1,11 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 export default class AddGoods extends React.Component {
   state = {
     form: {
-      title: '',
-      author: '',
+      title: 'not known',
+      author: 'not known',
       price: 0,
       coverImage: ''
     }
@@ -36,8 +37,8 @@ export default class AddGoods extends React.Component {
 
     this.setState({
       form: {
-        title: '',
-        author: '',
+        title: 'not known',
+        author: 'not known',
         price: 0,
         coverImage: ''
       }
@@ -47,8 +48,7 @@ export default class AddGoods extends React.Component {
   groupData = () => {
     const { form } = this.state;
     const keys = Object.keys(form);
-    const x = keys.reduce((acc, key) => ({ ...acc, [key]: form[key] }), {});
-    return x;
+    return keys.reduce((acc, key) => ({ ...acc, [key]: form[key] }), {});
   };
 
   renderForm() {
@@ -118,6 +118,11 @@ export default class AddGoods extends React.Component {
   }
 
   render() {
+    const { isLoggedIn } = this.props;
+
+    if (!isLoggedIn) {
+      return <Redirect to="/login" />;
+    }
     return this.renderForm();
   }
 }

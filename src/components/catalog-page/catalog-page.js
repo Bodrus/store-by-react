@@ -24,7 +24,7 @@ export default class CatalogPage extends Component {
     return (
       <ErrorBoundry>
         <BookstoreServiceConsumer>
-          {({ books, loading, pressDellBookButton }) => {
+          {({ books, loading, pressDellBookButton, isLoggedIn }) => {
             if (loading) {
               return <Spiner />;
             }
@@ -42,6 +42,7 @@ export default class CatalogPage extends Component {
                     bookId={this.state.selectedBook}
                     booksList={books}
                     pressDellBookButton={pressDellBookButton}
+                    isLoggedIn={isLoggedIn}
                   />
                 }
               />

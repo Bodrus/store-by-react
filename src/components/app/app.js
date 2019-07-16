@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import Header from '../header';
 import InformationBlok from '../infotmation-blok';
@@ -7,9 +6,8 @@ import CatalogPage from '../catalog-page';
 import BooksServices from '../../services/bookstore-service';
 import { BookstoreServiceProvider } from '../bookstore-service-context';
 import getJsonData from '../../services/data-json';
-import AddGoods from '../add-goods';
-import BookDetals from '../book-detals';
 import AdminPage from '../admin-page';
+import LoginPage from '../login-page';
 
 import ErrorIndicator from '../error-indicator';
 
@@ -25,7 +23,8 @@ export default class App extends React.Component {
     books: [],
     loading: true,
     changeCatalog: false,
-    update: false
+    update: false,
+    isLoggedIn: false
   };
 
   componentDidMount() {
@@ -34,6 +33,10 @@ export default class App extends React.Component {
       this.updateInformation();
     }
   }
+
+  onLogin = () => {
+    this.setState({ isLoggedIn: true });
+  };
 
   booksLoaded = books => {
     this.setState({ books, loading: false });
@@ -44,8 +47,6 @@ export default class App extends React.Component {
   };
 
   pressOnSubmit = data => {
-    const { books } = this.state;
-    const newB = [...books, data];
     this.booksServices.setData(data);
     this.updateInformation();
   };
@@ -71,7 +72,8 @@ export default class App extends React.Component {
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError, isLoggedIn } = this.state;
+    if (hasError) {
       return <ErrorIndicator />;
     }
 
@@ -81,23 +83,32 @@ export default class App extends React.Component {
       pressDelleteButton: this.pressDelleteButton,
       loading: this.state.loading,
       pressDellBookButton: this.pressDellBookButton,
-      pressOnSubmit: this.pressOnSubmit
+      pressOnSubmit: this.pressOnSubmit,
+      isLoggedIn: isLoggedIn
     };
 
     return (
       <BookstoreServiceProvider value={data}>
         <Router>
-          <div className="store-app">
-            <Header />
-            <InformationBlok />
-            <Route
-              path="/"
-              render={() => <h2>Welcome to Book Shope</h2>}
-              exact
-            />
-            <Route path="/admin/" component={AdminPage} />
-            <Route path="/catalog/" exact component={CatalogPage} />
-          </div>
+          <ErrorBoundry>
+            <div className="store-app">
+              <Header />
+              <InformationBlok />
+              <Route
+                path="/"
+                render={() => <h2>Welcome to Book Shope</h2>}
+                exact
+              />
+              <Route path="/admin/" component={AdminPage} />
+              <Route path="/catalog/" exact component={CatalogPage} />
+              <Route
+                path="/login/"
+                render={() => (
+                  <LoginPage isLoggedIn={isLoggedIn} onLogin={this.onLogin} />
+                )}
+              />
+            </div>
+          </ErrorBoundry>
         </Router>
       </BookstoreServiceProvider>
     );

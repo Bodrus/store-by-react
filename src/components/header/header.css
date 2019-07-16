@@ -1,12 +1,12 @@
 .header {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   padding-left: 10px;
 }
 
 .header ul li {
   list-style: none;
   margin: 0;
-  padding: .5rem 1rem;
+  padding: 5px 10px;
   border-radius: 3px;
 }
 
@@ -27,5 +27,5 @@
 }
 
 .logo {
-  width: 100px;
+  width: 130px;
 }

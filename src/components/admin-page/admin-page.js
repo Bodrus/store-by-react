@@ -7,11 +7,12 @@ export default class AdminPage extends React.Component {
   render() {
     return (
       <BookstoreServiceConsumer>
-        {({ pressOnSubmit, booksServices }) => {
+        {({ pressOnSubmit, booksServices, isLoggedIn }) => {
           return (
             <AddGoods
               pressOnSubmit={pressOnSubmit}
               booksServices={booksServices}
+              isLoggedIn={isLoggedIn}
             />
           );
         }}
