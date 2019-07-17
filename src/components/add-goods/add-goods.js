@@ -4,8 +4,8 @@ import { Redirect } from 'react-router-dom';
 export default class AddGoods extends React.Component {
   state = {
     form: {
-      title: 'not known',
-      author: 'not known',
+      title: '',
+      author: '',
       price: 0,
       coverImage: ''
     }
@@ -37,8 +37,8 @@ export default class AddGoods extends React.Component {
 
     this.setState({
       form: {
-        title: 'not known',
-        author: 'not known',
+        title: '',
+        author: '',
         price: 0,
         coverImage: ''
       }

@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import Spiner from '../spiner';
-import DelleteButton from '../delete-button';
 import icon from './notImage.png';
 
 import './book-detals.css';

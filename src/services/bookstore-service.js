@@ -32,8 +32,16 @@ export default class BookstoreService {
   }
 
   setData(item) {
-    const x = { id: uniqueId() + 10, ...item };
-    this.data.push(x);
+    const newTitle = item.title ? item.title : 'not known';
+    const newAuthor = item.author ? item.author : 'not known';
+
+    const changedItem = {
+      ...item,
+      id: uniqueId() + 10,
+      author: newAuthor,
+      title: newTitle
+    };
+    this.data.push(changedItem);
   }
 
   dellItem(idDell) {
