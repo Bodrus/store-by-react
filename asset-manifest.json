@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/store-by-react/static/css/main.40621552.chunk.css",
-    "main.js": "/store-by-react/static/js/main.a1a5e7a1.chunk.js",
-    "main.js.map": "/store-by-react/static/js/main.a1a5e7a1.chunk.js.map",
-    "runtime~main.js": "/store-by-react/static/js/runtime~main.a6594f92.js",
-    "runtime~main.js.map": "/store-by-react/static/js/runtime~main.a6594f92.js.map",
-    "static/js/2.5dccc7ec.chunk.js": "/store-by-react/static/js/2.5dccc7ec.chunk.js",
-    "static/js/2.5dccc7ec.chunk.js.map": "/store-by-react/static/js/2.5dccc7ec.chunk.js.map",
-    "index.html": "/store-by-react/index.html",
-    "precache-manifest.f28b935b37276c7d75a4531420cd63a1.js": "/store-by-react/precache-manifest.f28b935b37276c7d75a4531420cd63a1.js",
-    "service-worker.js": "/store-by-react/service-worker.js",
-    "static/css/main.40621552.chunk.css.map": "/store-by-react/static/css/main.40621552.chunk.css.map",
-    "static/media/error.png": "/store-by-react/static/media/error.25b5e3e1.png",
-    "static/media/logo.png": "/store-by-react/static/media/logo.6ba930b2.png",
-    "static/media/notImage.png": "/store-by-react/static/media/notImage.f228fdd5.png"
+    "main.css": "/store/static/css/main.40621552.chunk.css",
+    "main.js": "/store/static/js/main.a1a5e7a1.chunk.js",
+    "main.js.map": "/store/static/js/main.a1a5e7a1.chunk.js.map",
+    "runtime~main.js": "/store/static/js/runtime~main.852bf9be.js",
+    "runtime~main.js.map": "/store/static/js/runtime~main.852bf9be.js.map",
+    "static/js/2.5dccc7ec.chunk.js": "/store/static/js/2.5dccc7ec.chunk.js",
+    "static/js/2.5dccc7ec.chunk.js.map": "/store/static/js/2.5dccc7ec.chunk.js.map",
+    "index.html": "/store/index.html",
+    "precache-manifest.50bbac159d87488273d9163d8713536d.js": "/store/precache-manifest.50bbac159d87488273d9163d8713536d.js",
+    "service-worker.js": "/store/service-worker.js",
+    "static/css/main.40621552.chunk.css.map": "/store/static/css/main.40621552.chunk.css.map",
+    "static/media/error.png": "/store/static/media/error.25b5e3e1.png",
+    "static/media/logo.png": "/store/static/media/logo.6ba930b2.png",
+    "static/media/notImage.png": "/store/static/media/notImage.f228fdd5.png"
   }
 }
