@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/book-store/static/css/main.8d554285.chunk.css",
-    "main.js": "/book-store/static/js/main.7a7305ec.chunk.js",
-    "main.js.map": "/book-store/static/js/main.7a7305ec.chunk.js.map",
-    "runtime~main.js": "/book-store/static/js/runtime~main.a6495b40.js",
-    "runtime~main.js.map": "/book-store/static/js/runtime~main.a6495b40.js.map",
-    "static/js/2.d0fa09a9.chunk.js": "/book-store/static/js/2.d0fa09a9.chunk.js",
-    "static/js/2.d0fa09a9.chunk.js.map": "/book-store/static/js/2.d0fa09a9.chunk.js.map",
-    "index.html": "/book-store/index.html",
-    "precache-manifest.a1f98e015d639116289b0fe3a6385861.js": "/book-store/precache-manifest.a1f98e015d639116289b0fe3a6385861.js",
-    "service-worker.js": "/book-store/service-worker.js",
-    "static/css/main.8d554285.chunk.css.map": "/book-store/static/css/main.8d554285.chunk.css.map",
-    "static/media/error.png": "/book-store/static/media/error.25b5e3e1.png",
-    "static/media/logo.png": "/book-store/static/media/logo.6ba930b2.png",
-    "static/media/notImage.png": "/book-store/static/media/notImage.f228fdd5.png"
+    "main.css": "/store/static/css/main.8d554285.chunk.css",
+    "main.js": "/store/static/js/main.7a7305ec.chunk.js",
+    "main.js.map": "/store/static/js/main.7a7305ec.chunk.js.map",
+    "runtime~main.js": "/store/static/js/runtime~main.852bf9be.js",
+    "runtime~main.js.map": "/store/static/js/runtime~main.852bf9be.js.map",
+    "static/js/2.d0fa09a9.chunk.js": "/store/static/js/2.d0fa09a9.chunk.js",
+    "static/js/2.d0fa09a9.chunk.js.map": "/store/static/js/2.d0fa09a9.chunk.js.map",
+    "index.html": "/store/index.html",
+    "precache-manifest.85653d27f5b5eb61a80f318854156046.js": "/store/precache-manifest.85653d27f5b5eb61a80f318854156046.js",
+    "service-worker.js": "/store/service-worker.js",
+    "static/css/main.8d554285.chunk.css.map": "/store/static/css/main.8d554285.chunk.css.map",
+    "static/media/error.png": "/store/static/media/error.25b5e3e1.png",
+    "static/media/logo.png": "/store/static/media/logo.6ba930b2.png",
+    "static/media/notImage.png": "/store/static/media/notImage.f228fdd5.png"
   }
 }
