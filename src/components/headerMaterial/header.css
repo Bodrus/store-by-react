@@ -1,0 +1,43 @@
+header {
+  padding: 10px 0px;
+  transition: all 300ms ease-in;
+  margin-bottom: 20px;
+}
+
+header .header_logo {
+  flex-grow: 1;
+}
+header .header_logo_venue {
+  font-size: 40px;
+}
+
+header .header_logo_title {
+  text-transform: uppercase;
+}
+
+.logo {
+  width: 130px;
+}
+
+div {
+  list-style: none;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.header h3 a {
+  color: white;
+}
+
+.header h3 a:hover {
+  color: #00bc8c;
+}
+
+/* li:hover {
+  background-color: #444;
+} */

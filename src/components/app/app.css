@@ -9,3 +9,7 @@
 .store-app .row {
   margin-bottom: 5px;
 }
+.store-app {
+  max-width: 1350px;
+  margin: 0 auto;
+}

@@ -1,6 +1,7 @@
 .information-blok {
   display: flex;
   padding: 20px;
+  margin-top: 100px;
 }
 
 .information-blok .book-image {

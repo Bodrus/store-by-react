@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../header';
 import InformationBlok from '../infotmation-blok';
 import ErrorBoundry from '../error-boundry';
 import CatalogPage from '../catalog-page';
@@ -8,6 +7,7 @@ import { BookstoreServiceProvider } from '../bookstore-service-context';
 import getJsonData from '../../services/data-json';
 import AdminPage from '../admin-page';
 import LoginPage from '../login-page';
+import HeaderMaterial from '../headerMaterial/headerMaterial';
 
 import ErrorIndicator from '../error-indicator';
 
@@ -92,7 +92,7 @@ export default class App extends React.Component {
         <Router>
           <ErrorBoundry>
             <div className="store-app">
-              <Header />
+              <HeaderMaterial />
               <InformationBlok />
               <Route
                 path="/"
